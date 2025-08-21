@@ -1,3 +1,38 @@
+// Import all restaurant images
+import biryaniHouseImg from '@/assets/restaurants/biryani-house.jpg';
+import dosaCornerImg from '@/assets/restaurants/dosa-corner.jpg';
+import tandoorExpressImg from '@/assets/restaurants/tandoor-express.jpg';
+import chaatStreetImg from '@/assets/restaurants/chaat-street.jpg';
+import pizzaPalaceImg from '@/assets/restaurants/pizza-palace.jpg';
+import sweetTreatsImg from '@/assets/restaurants/sweet-treats.jpg';
+
+// Import all food images
+import chickenBiryaniImg from '@/assets/food/chicken-biryani.jpg';
+import muttonBiryaniImg from '@/assets/food/mutton-biryani.jpg';
+import vegBiryaniImg from '@/assets/food/veg-biryani.jpg';
+import chicken65Img from '@/assets/food/chicken-65.jpg';
+import raitaImg from '@/assets/food/raita.jpg';
+import masalaDosaImg from '@/assets/food/masala-dosa.jpg';
+import ravaDosaImg from '@/assets/food/rava-dosa.jpg';
+import idliSambarImg from '@/assets/food/idli-sambar.jpg';
+import vadaSambarImg from '@/assets/food/vada-sambar.jpg';
+import filterCoffeeImg from '@/assets/food/filter-coffee.jpg';
+import butterChickenImg from '@/assets/food/butter-chicken.jpg';
+import paneerButterMasalaImg from '@/assets/food/paneer-butter-masala.jpg';
+import garlicNaanImg from '@/assets/food/garlic-naan.jpg';
+import tandooriChickenImg from '@/assets/food/tandoori-chicken.jpg';
+import paniPuriImg from '@/assets/food/pani-puri.jpg';
+import bhelPuriImg from '@/assets/food/bhel-puri.jpg';
+import dahiPuriImg from '@/assets/food/dahi-puri.jpg';
+import samosaImg from '@/assets/food/samosa.jpg';
+import margheritaPizzaImg from '@/assets/food/margherita-pizza.jpg';
+import chickenSupremeImg from '@/assets/food/chicken-supreme.jpg';
+import garlicBreadImg from '@/assets/food/garlic-bread.jpg';
+import gulabJamunImg from '@/assets/food/gulab-jamun.jpg';
+import rasMalaiImg from '@/assets/food/ras-malai.jpg';
+import chocolateBrownieImg from '@/assets/food/chocolate-brownie.jpg';
+import kulfiImg from '@/assets/food/kulfi.jpg';
+
 export interface Restaurant {
   id: number;
   name: string;
@@ -26,7 +61,7 @@ export const restaurants: Restaurant[] = [
     name: "Biryani House",
     rating: 4.5,
     eta: "30-40 min",
-    image: "/api/placeholder/300/200",
+    image: biryaniHouseImg,
     cuisine: "North Indian, Biryani",
     location: "Banjara Hills",
     menu: [
@@ -35,7 +70,7 @@ export const restaurants: Restaurant[] = [
         name: "Chicken Biryani",
         price: 299,
         description: "Aromatic basmati rice cooked with tender chicken pieces and exotic spices",
-        image: "/api/placeholder/150/150",
+        image: chickenBiryaniImg,
         category: "Biryani",
         isVeg: false,
         isSpicy: true
@@ -45,7 +80,7 @@ export const restaurants: Restaurant[] = [
         name: "Mutton Biryani",
         price: 399,
         description: "Rich and flavorful mutton pieces cooked with fragrant basmati rice",
-        image: "/api/placeholder/150/150",
+        image: muttonBiryaniImg,
         category: "Biryani",
         isVeg: false,
         isSpicy: true
@@ -55,7 +90,7 @@ export const restaurants: Restaurant[] = [
         name: "Veg Biryani",
         price: 249,
         description: "Mixed vegetables and paneer cooked with aromatic basmati rice",
-        image: "/api/placeholder/150/150",
+        image: vegBiryaniImg,
         category: "Biryani",
         isVeg: true,
         isSpicy: false
@@ -65,7 +100,7 @@ export const restaurants: Restaurant[] = [
         name: "Chicken 65",
         price: 199,
         description: "Spicy and crispy chicken appetizer with curry leaves and green chilies",
-        image: "/api/placeholder/150/150",
+        image: chicken65Img,
         category: "Starters",
         isVeg: false,
         isSpicy: true
@@ -75,7 +110,7 @@ export const restaurants: Restaurant[] = [
         name: "Raita",
         price: 79,
         description: "Cool and refreshing yogurt based side dish with cucumber",
-        image: "/api/placeholder/150/150",
+        image: raitaImg,
         category: "Sides",
         isVeg: true,
         isSpicy: false
@@ -87,7 +122,7 @@ export const restaurants: Restaurant[] = [
     name: "Dosa Corner",
     rating: 4.3,
     eta: "20-30 min",
-    image: "/api/placeholder/300/200",
+    image: dosaCornerImg,
     cuisine: "South Indian",
     location: "Jubilee Hills",
     menu: [
@@ -96,7 +131,7 @@ export const restaurants: Restaurant[] = [
         name: "Masala Dosa",
         price: 149,
         description: "Crispy rice crepe with spiced potato filling served with sambar and chutney",
-        image: "/api/placeholder/150/150",
+        image: masalaDosaImg,
         category: "Dosa",
         isVeg: true,
         isSpicy: false
@@ -106,7 +141,7 @@ export const restaurants: Restaurant[] = [
         name: "Rava Dosa",
         price: 169,
         description: "Thin and crispy semolina crepe with onions and coriander",
-        image: "/api/placeholder/150/150",
+        image: ravaDosaImg,
         category: "Dosa",
         isVeg: true,
         isSpicy: false
@@ -116,7 +151,7 @@ export const restaurants: Restaurant[] = [
         name: "Idli Sambar",
         price: 99,
         description: "Soft steamed rice cakes served with lentil curry and coconut chutney",
-        image: "/api/placeholder/150/150",
+        image: idliSambarImg,
         category: "Breakfast",
         isVeg: true,
         isSpicy: false
@@ -126,7 +161,7 @@ export const restaurants: Restaurant[] = [
         name: "Vada Sambar",
         price: 119,
         description: "Crispy lentil donuts served with spicy sambar and chutney",
-        image: "/api/placeholder/150/150",
+        image: vadaSambarImg,
         category: "Breakfast",
         isVeg: true,
         isSpicy: true
@@ -136,7 +171,7 @@ export const restaurants: Restaurant[] = [
         name: "Filter Coffee",
         price: 59,
         description: "Authentic South Indian filter coffee made with chicory",
-        image: "/api/placeholder/150/150",
+        image: filterCoffeeImg,
         category: "Beverages",
         isVeg: true,
         isSpicy: false
@@ -148,7 +183,7 @@ export const restaurants: Restaurant[] = [
     name: "Tandoor Express",
     rating: 4.6,
     eta: "35-45 min",
-    image: "/api/placeholder/300/200",
+    image: tandoorExpressImg,
     cuisine: "North Indian, Tandoor",
     location: "Gachibowli",
     menu: [
@@ -157,7 +192,7 @@ export const restaurants: Restaurant[] = [
         name: "Butter Chicken",
         price: 329,
         description: "Tender chicken pieces in a rich tomato and cream based gravy",
-        image: "/api/placeholder/150/150",
+        image: butterChickenImg,
         category: "Main Course",
         isVeg: false,
         isSpicy: false
@@ -167,7 +202,7 @@ export const restaurants: Restaurant[] = [
         name: "Paneer Butter Masala",
         price: 269,
         description: "Soft paneer cubes in a creamy tomato based curry",
-        image: "/api/placeholder/150/150",
+        image: paneerButterMasalaImg,
         category: "Main Course",
         isVeg: true,
         isSpicy: false
@@ -177,7 +212,7 @@ export const restaurants: Restaurant[] = [
         name: "Garlic Naan",
         price: 89,
         description: "Soft tandoor bread topped with fresh garlic and coriander",
-        image: "/api/placeholder/150/150",
+        image: garlicNaanImg,
         category: "Breads",
         isVeg: true,
         isSpicy: false
@@ -187,7 +222,7 @@ export const restaurants: Restaurant[] = [
         name: "Tandoori Chicken",
         price: 399,
         description: "Half chicken marinated in yogurt and spices, cooked in tandoor",
-        image: "/api/placeholder/150/150",
+        image: tandooriChickenImg,
         category: "Tandoor",
         isVeg: false,
         isSpicy: true
@@ -199,7 +234,7 @@ export const restaurants: Restaurant[] = [
     name: "Chaat Street",
     rating: 4.2,
     eta: "15-25 min",
-    image: "/api/placeholder/300/200",
+    image: chaatStreetImg,
     cuisine: "Street Food, Chaat",
     location: "Ameerpet",
     menu: [
@@ -208,7 +243,7 @@ export const restaurants: Restaurant[] = [
         name: "Pani Puri",
         price: 79,
         description: "Crispy hollow puris filled with spicy tangy water and chutneys",
-        image: "/api/placeholder/150/150",
+        image: paniPuriImg,
         category: "Chaat",
         isVeg: true,
         isSpicy: true
@@ -218,7 +253,7 @@ export const restaurants: Restaurant[] = [
         name: "Bhel Puri",
         price: 89,
         description: "Puffed rice mixed with sev, chutneys and vegetables",
-        image: "/api/placeholder/150/150",
+        image: bhelPuriImg,
         category: "Chaat",
         isVeg: true,
         isSpicy: true
@@ -228,7 +263,7 @@ export const restaurants: Restaurant[] = [
         name: "Dahi Puri",
         price: 99,
         description: "Crispy puris topped with yogurt, chutneys and sev",
-        image: "/api/placeholder/150/150",
+        image: dahiPuriImg,
         category: "Chaat",
         isVeg: true,
         isSpicy: false
@@ -238,7 +273,7 @@ export const restaurants: Restaurant[] = [
         name: "Samosa",
         price: 49,
         description: "Deep fried triangular pastry with spiced potato filling",
-        image: "/api/placeholder/150/150",
+        image: samosaImg,
         category: "Snacks",
         isVeg: true,
         isSpicy: true
@@ -250,7 +285,7 @@ export const restaurants: Restaurant[] = [
     name: "Pizza Palace",
     rating: 4.4,
     eta: "25-35 min",
-    image: "/api/placeholder/300/200",
+    image: pizzaPalaceImg,
     cuisine: "Italian, Pizza",
     location: "Hitech City",
     menu: [
@@ -259,7 +294,7 @@ export const restaurants: Restaurant[] = [
         name: "Margherita Pizza",
         price: 299,
         description: "Classic pizza with tomato sauce, mozzarella and fresh basil",
-        image: "/api/placeholder/150/150",
+        image: margheritaPizzaImg,
         category: "Pizza",
         isVeg: true,
         isSpicy: false
@@ -269,7 +304,7 @@ export const restaurants: Restaurant[] = [
         name: "Chicken Supreme",
         price: 449,
         description: "Loaded with chicken, bell peppers, onions and cheese",
-        image: "/api/placeholder/150/150",
+        image: chickenSupremeImg,
         category: "Pizza",
         isVeg: false,
         isSpicy: false
@@ -279,7 +314,7 @@ export const restaurants: Restaurant[] = [
         name: "Garlic Bread",
         price: 149,
         description: "Crispy bread sticks with garlic butter and herbs",
-        image: "/api/placeholder/150/150",
+        image: garlicBreadImg,
         category: "Sides",
         isVeg: true,
         isSpicy: false
@@ -291,7 +326,7 @@ export const restaurants: Restaurant[] = [
     name: "Sweet Treats",
     rating: 4.7,
     eta: "20-30 min",
-    image: "/api/placeholder/300/200",
+    image: sweetTreatsImg,
     cuisine: "Desserts, Sweets",
     location: "Kondapur",
     menu: [
@@ -300,7 +335,7 @@ export const restaurants: Restaurant[] = [
         name: "Gulab Jamun",
         price: 89,
         description: "Soft milk dumplings soaked in rose flavored sugar syrup",
-        image: "/api/placeholder/150/150",
+        image: gulabJamunImg,
         category: "Sweets",
         isVeg: true,
         isSpicy: false
@@ -310,7 +345,7 @@ export const restaurants: Restaurant[] = [
         name: "Ras Malai",
         price: 129,
         description: "Spongy cottage cheese balls in sweetened milk",
-        image: "/api/placeholder/150/150",
+        image: rasMalaiImg,
         category: "Sweets",
         isVeg: true,
         isSpicy: false
@@ -320,7 +355,7 @@ export const restaurants: Restaurant[] = [
         name: "Chocolate Brownie",
         price: 149,
         description: "Rich and fudgy chocolate brownie with vanilla ice cream",
-        image: "/api/placeholder/150/150",
+        image: chocolateBrownieImg,
         category: "Desserts",
         isVeg: true,
         isSpicy: false
@@ -330,7 +365,7 @@ export const restaurants: Restaurant[] = [
         name: "Kulfi",
         price: 79,
         description: "Traditional Indian ice cream flavored with cardamom and pistachios",
-        image: "/api/placeholder/150/150",
+        image: kulfiImg,
         category: "Desserts",
         isVeg: true,
         isSpicy: false
