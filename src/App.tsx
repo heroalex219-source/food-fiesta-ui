@@ -9,6 +9,7 @@ import CustomerHome from "./pages/customer/CustomerHome";
 import RestaurantPage from "./pages/customer/RestaurantPage";
 import CartPage from "./pages/customer/CartPage";
 import CheckoutPage from "./pages/customer/CheckoutPage";
+import RestaurantDashboard from "./pages/restaurant/RestaurantDashboard";
 import FloatingCart from "./components/FloatingCart";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -78,9 +79,7 @@ const App = () => (
             path="/restaurant/dashboard" 
             element={
               <ProtectedRoute allowedRoles={['restaurant']}>
-                <div className="min-h-screen flex items-center justify-center">
-                  <h1 className="text-2xl font-bold">Restaurant Dashboard (Coming Soon)</h1>
-                </div>
+                <RestaurantDashboard />
               </ProtectedRoute>
             } 
           />
