@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { useCartStore } from './cartStore';
 
 export type UserRole = 'customer' | 'restaurant' | 'rider';
 
@@ -53,6 +54,8 @@ export const useAuthStore = create<AuthState>()(
       },
 
       logout: () => {
+        // Clear cart when logging out
+        useCartStore.getState().clearCart();
         set({ user: null, isAuthenticated: false });
       }
     }),
