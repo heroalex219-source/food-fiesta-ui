@@ -25,18 +25,34 @@ export const useAuthStore = create<AuthState>()(
       user: null,
       isAuthenticated: false,
 
-      login: async (email: string, password: string, role?: UserRole) => {
+      login: async (email: string, password: string) => {
         // Mock authentication - in real app, this would call an API
         await new Promise(resolve => setTimeout(resolve, 1000));
         
-        const user: User = {
+        // Mock: Find user by email (in real app, backend would validate and return user)
+        const mockUsers = [
+          { id: '1', email: 'customer@test.com', name: 'John Customer', role: 'customer' as UserRole },
+          { id: '2', email: 'restaurant@test.com', name: 'Restaurant Owner', role: 'restaurant' as UserRole },
+          { id: '3', email: 'rider@test.com', name: 'Delivery Rider', role: 'rider' as UserRole }
+        ];
+        
+        const foundUser = mockUsers.find(u => u.email === email) || {
           id: '1',
           email,
           name: email.split('@')[0],
-          role: role || 'customer'
+          role: 'customer' as UserRole
         };
 
-        set({ user, isAuthenticated: true });
+        set({ user: foundUser, isAuthenticated: true });
+        
+        // Auto-redirect based on user role
+        const redirectPaths = {
+          customer: '/customer/home',
+          restaurant: '/restaurant/dashboard',
+          rider: '/rider/dashboard'
+        };
+        
+        window.location.href = redirectPaths[foundUser.role];
       },
 
       signup: async (email: string, password: string, name: string, role: UserRole) => {

@@ -34,24 +34,13 @@ const Login = () => {
     setIsLoading(true);
     
     try {
-      await login(loginForm.email, loginForm.password, selectedRole);
+      await login(loginForm.email, loginForm.password);
       toast({
         title: "Welcome back!",
         description: "You have been successfully logged in.",
       });
       
-      // Redirect based on role
-      switch (selectedRole) {
-        case 'customer':
-          navigate('/customer/home');
-          break;
-        case 'restaurant':
-          navigate('/restaurant/dashboard');
-          break;
-        case 'rider':
-          navigate('/rider/dashboard');
-          break;
-      }
+      // Will auto-redirect based on user's stored role in authStore
     } catch (error) {
       toast({
         title: "Login failed",
@@ -84,18 +73,7 @@ const Login = () => {
         description: "Welcome to FoodFiesta! Your account has been created successfully.",
       });
       
-      // Redirect based on role
-      switch (selectedRole) {
-        case 'customer':
-          navigate('/customer/home');
-          break;
-        case 'restaurant':
-          navigate('/restaurant/dashboard');
-          break;
-        case 'rider':
-          navigate('/rider/dashboard');
-          break;
-      }
+      // Will auto-redirect based on user's role in authStore
     } catch (error) {
       toast({
         title: "Signup failed",
@@ -162,31 +140,6 @@ const Login = () => {
                 <TabsTrigger value="signup">Sign Up</TabsTrigger>
               </TabsList>
               
-              {/* Role Selection */}
-              <div className="space-y-3">
-                <Label className="text-sm font-medium">I am a:</Label>
-                <div className="grid grid-cols-3 gap-2">
-                  {roleOptions.map((role) => {
-                    const IconComponent = role.icon;
-                    return (
-                      <button
-                        key={role.value}
-                        type="button"
-                        onClick={() => setSelectedRole(role.value)}
-                        className={`p-3 rounded-lg border-2 transition-all duration-300 hover:scale-105 ${
-                          selectedRole === role.value
-                            ? 'border-primary bg-primary/5 shadow-food'
-                            : 'border-border hover:border-primary/50'
-                        }`}
-                      >
-                        <IconComponent className={`w-5 h-5 mx-auto mb-1 ${role.color}`} />
-                        <div className="text-xs font-medium">{role.label}</div>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
               <TabsContent value="login" className="space-y-4">
                 <form onSubmit={handleLogin} className="space-y-4">
                   <div className="space-y-2">
@@ -225,6 +178,31 @@ const Login = () => {
               </TabsContent>
               
               <TabsContent value="signup" className="space-y-4">
+                {/* Role Selection - Only for Signup */}
+                <div className="space-y-3">
+                  <Label className="text-sm font-medium">I am a:</Label>
+                  <div className="grid grid-cols-3 gap-2">
+                    {roleOptions.map((role) => {
+                      const IconComponent = role.icon;
+                      return (
+                        <button
+                          key={role.value}
+                          type="button"
+                          onClick={() => setSelectedRole(role.value)}
+                          className={`p-3 rounded-lg border-2 transition-all duration-300 hover:scale-105 ${
+                            selectedRole === role.value
+                              ? 'border-primary bg-primary/5 shadow-food'
+                              : 'border-border hover:border-primary/50'
+                          }`}
+                        >
+                          <IconComponent className={`w-5 h-5 mx-auto mb-1 ${role.color}`} />
+                          <div className="text-xs font-medium">{role.label}</div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+                
                 <form onSubmit={handleSignup} className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name</Label>

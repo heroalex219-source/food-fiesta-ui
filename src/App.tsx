@@ -24,7 +24,13 @@ const ProtectedRoute = ({ children, allowedRoles }: { children: React.ReactNode;
   }
   
   if (allowedRoles.length > 0 && user && !allowedRoles.includes(user.role)) {
-    return <Navigate to="/login" replace />;
+    // Redirect to user's correct home page based on their role
+    const roleRedirects = {
+      customer: '/customer/home',
+      restaurant: '/restaurant/dashboard',
+      rider: '/rider/dashboard'
+    };
+    return <Navigate to={roleRedirects[user.role]} replace />;
   }
   
   return <>{children}</>;
